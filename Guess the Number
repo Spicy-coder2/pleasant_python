@@ -1,1 +1,24 @@
+import random
+import math
+
+mini = int(input("Enter the lowest number : "))
+maxi = int(input("Enter the Maximum number : "))
+
+r = random.randint(mini, maxi)
+print("you'll get ", round(math.log(maxi-mini+1 , 2)) , " attemps to solve")
+count = 0
+while count < round(math.log(maxi-mini+1,2)):
+    count += 1
+    guess = int(input("Your guessing number: "))
+    if r == guess:
+        print("Congratulations you got the number at", count ," attamps!")
+        break
+    elif r > guess:
+        print("Oho it's too low!")
+    elif r < guess:
+        print("Oho it's too high!")
+
+if count >= math.log(maxi-mini + 1 , 2):
+    print("\nOpps! The number is %d"% r)
+    print("\tBetter Luck next time!")
 
